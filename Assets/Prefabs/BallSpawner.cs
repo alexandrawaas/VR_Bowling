@@ -14,6 +14,7 @@ public class BallSpawner : MonoBehaviour
     void Start()
     {
         Spawn();
+        Debug.Log("Spawned");
     }
 
     // Update is called once per frame

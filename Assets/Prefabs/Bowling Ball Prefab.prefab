@@ -1201,6 +1201,7 @@ GameObject:
   - component: {fileID: 5289612612329101273}
   - component: {fileID: 2100407803094300167}
   - component: {fileID: 3482143072811185376}
+  - component: {fileID: 2258762941123816882}
   m_Layer: 0
   m_Name: Bowling Ball Prefab
   m_TagString: Untagged
@@ -1424,7 +1425,7 @@ MonoBehaviour:
   poseEditorExpanded: 1
   blendEditorExpanded: 1
   poseNames:
-  - newPose (MAIN)
+  - PoseBowlingHand (MAIN)
   overridePreviewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf, type: 3}
   overridePreviewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25, type: 3}
   skeletonMainPose: {fileID: 11400000, guid: a3e1f23fc1f857f43924a6967378da90, type: 2}
@@ -1436,6 +1437,18 @@ MonoBehaviour:
   previewPoseSelection: 0
   blendingBehaviours: []
   scale: 1
+--- !u!114 &2258762941123816882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8242373135854093829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538de483c0f54f24ea6eac9b20572b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8328963101105477776
 GameObject:
   m_ObjectHideFlags: 0

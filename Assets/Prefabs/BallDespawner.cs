@@ -7,21 +7,11 @@ public class BallDespawner : MonoBehaviour
     public BallSpawner Spawner;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<SphereCollider>() != null)
+        if (other.gameObject.GetComponent<BallIdentifier>() != null)
         {
-            Destroy(other.gameObject);
+            Destroy(other.gameObject, 10f);
+            Debug.Log("Ball collided with despawner");
             Spawner.Spawn();
         }
-    }
-    
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
