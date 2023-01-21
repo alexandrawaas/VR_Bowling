@@ -12,8 +12,8 @@ public class PinTrigger : MonoBehaviour
     {
         if (other == collisionObject.GetComponent<MeshCollider>())
         {
-            Debug.Log("Pin has fallen");
             fallenPins++;
+            ScoreManager.instance.AddPoint();
             hasFallen = true;
             Debug.Log("Fallen Pins: " + fallenPins);
         }

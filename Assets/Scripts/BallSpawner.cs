@@ -5,8 +5,7 @@ using UnityEngine;
 public class BallSpawner : MonoBehaviour
 {
     public GameObject spawnItem;
-
-    public float rollBackTime;
+    
     public static float despawnTime;
 
     public float initialSpeed;
