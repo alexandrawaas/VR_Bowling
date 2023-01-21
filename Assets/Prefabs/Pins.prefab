@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1474139219712152235}
   - component: {fileID: 6007153822447936714}
   - component: {fileID: 1474139219712152234}
-  - component: {fileID: 1474139219712152237}
   - component: {fileID: 1474139219712152236}
+  - component: {fileID: 1474139219712152237}
   - component: {fileID: 1474139219712152239}
+  - component: {fileID: 9170521538501708583}
   m_Layer: 0
   m_Name: BowlingPin2.002
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44761650686275236}
   m_LocalRotation: {x: -0.00000007073732, y: 0.49592572, z: 0.000000040398284, w: 0.86836493}
-  m_LocalPosition: {x: 0.14999998, y: 0.067057356, z: -5.95}
+  m_LocalPosition: {x: 0.14999998, y: 0.067057356, z: -0.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,6 +105,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1474139219712152236
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44761650686275236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.09
+  m_Center: {x: -0.000000020489097, y: 0.15888327, z: -0.00034401193}
 --- !u!136 &1474139219712152237
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -118,19 +132,6 @@ CapsuleCollider:
   m_Height: 0.38114133
   m_Direction: 1
   m_Center: {x: -0.000000020489097, y: 0.15888327, z: -0.00034401193}
---- !u!135 &1474139219712152236
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44761650686275236}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.09
-  m_Center: {x: -0.000000020489097, y: 0.15888327, z: -0.00034401193}
 --- !u!114 &1474139219712152239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,8 +144,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919594ac1a1e0d498f62ace35498118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionObject: {fileID: 4727222096389542054}
+  collisionObject: {fileID: 0}
   hasFallen: 0
+--- !u!114 &9170521538501708583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44761650686275236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a29ed87a3cc324d8d4202fd856d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &242278442641466798
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,10 +170,11 @@ GameObject:
   - component: {fileID: 5494832605984786150}
   - component: {fileID: 8047198203361195860}
   - component: {fileID: 242278442641466833}
+  - component: {fileID: 242278442641466834}
   - component: {fileID: 242278442641466835}
   - component: {fileID: 242278442641466832}
-  - component: {fileID: 242278442641466834}
   - component: {fileID: 242278442641466837}
+  - component: {fileID: 2933308954782916121}
   m_Layer: 0
   m_Name: BowlingPin2
   m_TagString: Untagged
@@ -176,7 +190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242278442641466798}
   m_LocalRotation: {x: -0.000000070737315, y: 0.49592572, z: 0.000000040398287, w: 0.86836493}
-  m_LocalPosition: {x: 0, y: 0.067057356, z: -5.5}
+  m_LocalPosition: {x: 0, y: 0.067057356, z: 0.10999966}
   m_LocalScale: {x: 0.03168741, y: 0.031687405, z: 0.03168741}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -250,6 +264,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &242278442641466834
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242278442641466798}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.85
+  m_Center: {x: -0.00000059572284, y: 5.0140815, z: -0.010856329}
 --- !u!114 &242278442641466835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,19 +323,6 @@ CapsuleCollider:
   m_Height: 12.028163
   m_Direction: 1
   m_Center: {x: -0.00000059572284, y: 5.0140815, z: -0.010856329}
---- !u!135 &242278442641466834
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242278442641466798}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.85
-  m_Center: {x: -0.00000059572284, y: 5.0140815, z: -0.010856329}
 --- !u!114 &242278442641466837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,8 +335,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919594ac1a1e0d498f62ace35498118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionObject: {fileID: 4727222096389542054}
+  collisionObject: {fileID: 0}
   hasFallen: 0
+--- !u!114 &2933308954782916121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242278442641466798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a29ed87a3cc324d8d4202fd856d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &246922722484040230
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,9 +361,10 @@ GameObject:
   - component: {fileID: 5192196143508961407}
   - component: {fileID: 1197409270748756}
   - component: {fileID: 1197409270748759}
-  - component: {fileID: 1197409270748758}
   - component: {fileID: 1197409270748761}
+  - component: {fileID: 1197409270748758}
   - component: {fileID: 1197409270748760}
+  - component: {fileID: 5106763510004136594}
   m_Layer: 0
   m_Name: BowlingPin2.007
   m_TagString: Untagged
@@ -353,7 +380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246922722484040230}
   m_LocalRotation: {x: -0.00000007073732, y: 0.49592572, z: 0.000000040398284, w: 0.86836493}
-  m_LocalPosition: {x: -0.3, y: 0.067057356, z: -5.799999}
+  m_LocalPosition: {x: -0.3, y: 0.067057356, z: -0.18999958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -427,6 +454,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1197409270748761
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246922722484040230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.09
+  m_Center: {x: -0.0000009741634, y: 0.15888326, z: -0.00034448877}
 --- !u!136 &1197409270748758
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -441,19 +481,6 @@ CapsuleCollider:
   m_Height: 0.38114133
   m_Direction: 1
   m_Center: {x: -0.0000009741634, y: 0.15888326, z: -0.00034448877}
---- !u!135 &1197409270748761
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246922722484040230}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.09
-  m_Center: {x: -0.0000009741634, y: 0.15888326, z: -0.00034448877}
 --- !u!114 &1197409270748760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,8 +493,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919594ac1a1e0d498f62ace35498118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionObject: {fileID: 4727222096389542054}
+  collisionObject: {fileID: 0}
   hasFallen: 0
+--- !u!114 &5106763510004136594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246922722484040230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a29ed87a3cc324d8d4202fd856d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1162308226377486644
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,9 +519,10 @@ GameObject:
   - component: {fileID: 6993596831930538830}
   - component: {fileID: 3061834441022878349}
   - component: {fileID: 1162308226377486647}
-  - component: {fileID: 1162308226377486646}
   - component: {fileID: 1162308226377486649}
+  - component: {fileID: 1162308226377486646}
   - component: {fileID: 1162308226377486648}
+  - component: {fileID: 1053457813532458763}
   m_Layer: 0
   m_Name: BowlingPin2.004
   m_TagString: Untagged
@@ -498,7 +538,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162308226377486644}
   m_LocalRotation: {x: -0.00000007073732, y: 0.49592572, z: 0.000000040398284, w: 0.86836493}
-  m_LocalPosition: {x: 0.14999998, y: 0.067057356, z: -5.6499996}
+  m_LocalPosition: {x: 0.14999998, y: 0.067057356, z: -0.03999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -572,6 +612,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1162308226377486649
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162308226377486644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.09
+  m_Center: {x: -0.000000022446647, y: 0.15888326, z: 0.014957336}
 --- !u!136 &1162308226377486646
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -586,19 +639,6 @@ CapsuleCollider:
   m_Height: 0.38114133
   m_Direction: 1
   m_Center: {x: -0.000000020489097, y: 0.15888326, z: -0.00034401193}
---- !u!135 &1162308226377486649
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162308226377486644}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.09
-  m_Center: {x: -0.000000022446647, y: 0.15888326, z: 0.014957336}
 --- !u!114 &1162308226377486648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,8 +651,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919594ac1a1e0d498f62ace35498118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionObject: {fileID: 4727222096389542054}
+  collisionObject: {fileID: 0}
   hasFallen: 0
+--- !u!114 &1053457813532458763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162308226377486644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a29ed87a3cc324d8d4202fd856d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3268084451658666139
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,9 +677,10 @@ GameObject:
   - component: {fileID: 5997381780218789225}
   - component: {fileID: 778580757315864654}
   - component: {fileID: 778580757315864689}
-  - component: {fileID: 778580757315864688}
   - component: {fileID: 778580757315864691}
+  - component: {fileID: 778580757315864688}
   - component: {fileID: 778580757315864690}
+  - component: {fileID: 3670609613669402698}
   m_Layer: 0
   m_Name: BowlingPin2.005
   m_TagString: Untagged
@@ -643,7 +696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3268084451658666139}
   m_LocalRotation: {x: -0.00000007073732, y: 0.49592572, z: 0.000000040398284, w: 0.86836493}
-  m_LocalPosition: {x: 0.45000005, y: 0.067057356, z: -5.95}
+  m_LocalPosition: {x: 0.45000005, y: 0.067057356, z: -0.34000015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -717,6 +770,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &778580757315864691
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3268084451658666139}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.09
+  m_Center: {x: -0.0000009741634, y: 0.15888326, z: -0.00034448877}
 --- !u!136 &778580757315864688
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -731,19 +797,6 @@ CapsuleCollider:
   m_Height: 0.38114133
   m_Direction: 1
   m_Center: {x: -0.0000009741634, y: 0.15888326, z: -0.00034448877}
---- !u!135 &778580757315864691
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3268084451658666139}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.09
-  m_Center: {x: -0.0000009741634, y: 0.15888326, z: -0.00034448877}
 --- !u!114 &778580757315864690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,8 +809,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919594ac1a1e0d498f62ace35498118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionObject: {fileID: 4727222096389542054}
+  collisionObject: {fileID: 0}
   hasFallen: 0
+--- !u!114 &3670609613669402698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3268084451658666139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a29ed87a3cc324d8d4202fd856d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4297129171413545710
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,9 +835,10 @@ GameObject:
   - component: {fileID: 8497335838254254354}
   - component: {fileID: 2780838152616198805}
   - component: {fileID: 1037412561889713245}
-  - component: {fileID: 1037412561889713244}
   - component: {fileID: 1037412561889713247}
+  - component: {fileID: 1037412561889713244}
   - component: {fileID: 1037412561889713246}
+  - component: {fileID: 617372173109539014}
   m_Layer: 0
   m_Name: BowlingPin2.006
   m_TagString: Untagged
@@ -788,7 +854,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4297129171413545710}
   m_LocalRotation: {x: -0.00000007073732, y: 0.49592572, z: 0.000000040398284, w: 0.86836493}
-  m_LocalPosition: {x: 0.29999995, y: 0.067057356, z: -5.799999}
+  m_LocalPosition: {x: 0.29999995, y: 0.067057356, z: -0.18999958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -862,6 +928,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1037412561889713247
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4297129171413545710}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.09
+  m_Center: {x: -0.000000020489097, y: 0.15888327, z: -0.00034401193}
 --- !u!136 &1037412561889713244
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -876,19 +955,6 @@ CapsuleCollider:
   m_Height: 0.38114133
   m_Direction: 1
   m_Center: {x: -0.000000020489097, y: 0.15888327, z: -0.00034401193}
---- !u!135 &1037412561889713247
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4297129171413545710}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.09
-  m_Center: {x: -0.000000020489097, y: 0.15888327, z: -0.00034401193}
 --- !u!114 &1037412561889713246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,8 +967,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919594ac1a1e0d498f62ace35498118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionObject: {fileID: 4727222096389542054}
+  collisionObject: {fileID: 0}
   hasFallen: 0
+--- !u!114 &617372173109539014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4297129171413545710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a29ed87a3cc324d8d4202fd856d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4697454586252991875
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,9 +993,10 @@ GameObject:
   - component: {fileID: 5401391793082769946}
   - component: {fileID: 5896686121651509111}
   - component: {fileID: 5896686121651509110}
-  - component: {fileID: 5896686121651509113}
   - component: {fileID: 5896686121651509112}
+  - component: {fileID: 5896686121651509113}
   - component: {fileID: 5896686121651509115}
+  - component: {fileID: 535917385417459630}
   m_Layer: 0
   m_Name: BowlingPin2.008
   m_TagString: Untagged
@@ -933,7 +1012,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4697454586252991875}
   m_LocalRotation: {x: -0.00000007073732, y: 0.49592572, z: 0.000000040398284, w: 0.86836493}
-  m_LocalPosition: {x: -0.45, y: 0.067057356, z: -5.95}
+  m_LocalPosition: {x: -0.45, y: 0.067057356, z: -0.34000015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1007,6 +1086,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &5896686121651509112
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697454586252991875}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.09
+  m_Center: {x: -0.000000020489097, y: 0.15888327, z: -0.00034448877}
 --- !u!136 &5896686121651509113
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1021,19 +1113,6 @@ CapsuleCollider:
   m_Height: 0.38114133
   m_Direction: 1
   m_Center: {x: -0.000000020489097, y: 0.15888327, z: -0.00034448877}
---- !u!135 &5896686121651509112
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4697454586252991875}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.09
-  m_Center: {x: -0.000000020489097, y: 0.15888327, z: -0.00034448877}
 --- !u!114 &5896686121651509115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,106 +1125,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919594ac1a1e0d498f62ace35498118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionObject: {fileID: 4727222096389542054}
+  collisionObject: {fileID: 0}
   hasFallen: 0
---- !u!1 &4727222096389542054
-GameObject:
+--- !u!114 &535917385417459630
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9109475047401140998}
-  - component: {fileID: 3464088135400941386}
-  - component: {fileID: 1847138499240682396}
-  - component: {fileID: 1570543017243445449}
-  m_Layer: 0
-  m_Name: FallTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9109475047401140998
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4727222096389542054}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00029695034, y: 0.004, z: -5.7250204}
-  m_LocalScale: {x: 0.28405, y: 0.28405, z: 0.28405}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7468643692251989986}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3464088135400941386
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4727222096389542054}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1847138499240682396
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4727222096389542054}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1570543017243445449
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4727222096389542054}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_GameObject: {fileID: 4697454586252991875}
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a29ed87a3cc324d8d4202fd856d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7239781789548452271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,9 +1151,10 @@ GameObject:
   - component: {fileID: 437753770196527565}
   - component: {fileID: 1466470492288931412}
   - component: {fileID: 1466470492288931415}
-  - component: {fileID: 1466470492288931414}
   - component: {fileID: 1466470492288931417}
+  - component: {fileID: 1466470492288931414}
   - component: {fileID: 1466470492288931416}
+  - component: {fileID: 7588876969829698885}
   m_Layer: 0
   m_Name: BowlingPin2.001
   m_TagString: Untagged
@@ -1176,7 +1170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7239781789548452271}
   m_LocalRotation: {x: -0.00000007073732, y: 0.49592572, z: 0.000000040398284, w: 0.86836493}
-  m_LocalPosition: {x: 0, y: 0.067057356, z: -5.799999}
+  m_LocalPosition: {x: 0, y: 0.067057356, z: -0.18999958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1250,6 +1244,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1466470492288931417
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7239781789548452271}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.09
+  m_Center: {x: -0.000000020489097, y: 0.15888326, z: -0.00034448877}
 --- !u!136 &1466470492288931414
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1264,19 +1271,6 @@ CapsuleCollider:
   m_Height: 0.38114133
   m_Direction: 1
   m_Center: {x: -0.000000020489097, y: 0.15888326, z: -0.00034448877}
---- !u!135 &1466470492288931417
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7239781789548452271}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.09
-  m_Center: {x: -0.000000020489097, y: 0.15888326, z: -0.00034448877}
 --- !u!114 &1466470492288931416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1289,8 +1283,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919594ac1a1e0d498f62ace35498118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionObject: {fileID: 4727222096389542054}
+  collisionObject: {fileID: 0}
   hasFallen: 0
+--- !u!114 &7588876969829698885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7239781789548452271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a29ed87a3cc324d8d4202fd856d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7468643692251989987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,6 +1306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7468643692251989986}
+  - component: {fileID: 3622226424733676321}
   m_Layer: 0
   m_Name: Pins
   m_TagString: Untagged
@@ -1315,7 +1322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7468643692251989987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.289, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1329,10 +1336,22 @@ Transform:
   - {fileID: 3694807849716559180}
   - {fileID: 6260799477468719454}
   - {fileID: 4133137989171199929}
-  - {fileID: 9109475047401140998}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3622226424733676321
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7468643692251989987}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9064873218128270210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,9 +1364,10 @@ GameObject:
   - component: {fileID: 1946022588455730813}
   - component: {fileID: 2004668474422233134}
   - component: {fileID: 1946022588455730812}
-  - component: {fileID: 1946022588455730815}
   - component: {fileID: 1946022588455730814}
+  - component: {fileID: 1946022588455730815}
   - component: {fileID: 1946022588455730785}
+  - component: {fileID: 1341294371372410540}
   m_Layer: 0
   m_Name: BowlingPin2.003
   m_TagString: Untagged
@@ -1363,7 +1383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9064873218128270210}
   m_LocalRotation: {x: -0.00000007073732, y: 0.49592572, z: 0.000000040398284, w: 0.86836493}
-  m_LocalPosition: {x: -0.14999998, y: 0.067057356, z: -5.6499996}
+  m_LocalPosition: {x: -0.14999998, y: 0.067057356, z: -0.03999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1437,6 +1457,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1946022588455730814
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9064873218128270210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.09
+  m_Center: {x: 0.0000009331852, y: 0.15888324, z: -0.00034401193}
 --- !u!136 &1946022588455730815
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1451,19 +1484,6 @@ CapsuleCollider:
   m_Height: 0.38114133
   m_Direction: 1
   m_Center: {x: 0.0000009331852, y: 0.15888324, z: -0.00034401193}
---- !u!135 &1946022588455730814
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9064873218128270210}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.09
-  m_Center: {x: 0.0000009331852, y: 0.15888324, z: -0.00034401193}
 --- !u!114 &1946022588455730785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1476,8 +1496,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919594ac1a1e0d498f62ace35498118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionObject: {fileID: 4727222096389542054}
+  collisionObject: {fileID: 0}
   hasFallen: 0
+--- !u!114 &1341294371372410540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9064873218128270210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a29ed87a3cc324d8d4202fd856d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9157976116141851106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,9 +1522,10 @@ GameObject:
   - component: {fileID: 207164573845765899}
   - component: {fileID: 7361005718608937996}
   - component: {fileID: 207164573845765898}
-  - component: {fileID: 207164573845765901}
   - component: {fileID: 207164573845765900}
+  - component: {fileID: 207164573845765901}
   - component: {fileID: 207164573845765903}
+  - component: {fileID: 8853994039880346824}
   m_Layer: 0
   m_Name: BowlingPin2.009
   m_TagString: Untagged
@@ -1508,7 +1541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9157976116141851106}
   m_LocalRotation: {x: -0.00000007073732, y: 0.49592572, z: 0.000000040398284, w: 0.86836493}
-  m_LocalPosition: {x: -0.14999998, y: 0.067057356, z: -5.95}
+  m_LocalPosition: {x: -0.14999998, y: 0.067057356, z: -0.34000015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1582,6 +1615,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &207164573845765900
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157976116141851106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.09
+  m_Center: {x: -0.000000020489097, y: 0.15888326, z: -0.00034448877}
 --- !u!136 &207164573845765901
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1596,19 +1642,6 @@ CapsuleCollider:
   m_Height: 0.38114133
   m_Direction: 1
   m_Center: {x: -0.000000020489097, y: 0.15888326, z: -0.00034448877}
---- !u!135 &207164573845765900
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9157976116141851106}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.09
-  m_Center: {x: -0.000000020489097, y: 0.15888326, z: -0.00034448877}
 --- !u!114 &207164573845765903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1621,5 +1654,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8919594ac1a1e0d498f62ace35498118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionObject: {fileID: 4727222096389542054}
+  collisionObject: {fileID: 0}
   hasFallen: 0
+--- !u!114 &8853994039880346824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9157976116141851106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a29ed87a3cc324d8d4202fd856d405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

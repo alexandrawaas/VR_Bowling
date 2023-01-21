@@ -7,7 +7,7 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
 	public static ScoreManager instance;
-	public BallSpawner pinSpawner;
+	public PinSpawner pinSpawner;
 
 	private int round = 1;
 	public TMP_Text[] scoreFields;

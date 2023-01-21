@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a07bd1d1654c5b4ca9eba3c99cc5c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinSpawner: {fileID: 0}
+  pinSpawner: {fileID: 1353783110}
   scoreFields:
   - {fileID: 890752982}
   - {fileID: 932842258}
@@ -3772,7 +3772,7 @@ GameObject:
   - component: {fileID: 186417586}
   - component: {fileID: 186417585}
   m_Layer: 0
-  m_Name: Plane (1)
+  m_Name: Bild1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16452,7 +16452,7 @@ GameObject:
   - component: {fileID: 917764428}
   - component: {fileID: 917764427}
   m_Layer: 0
-  m_Name: Plane (2)
+  m_Name: Bild2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21532,7 +21532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288981718}
   m_LocalRotation: {x: 0.34987357, y: -0, z: -0, w: 0.93679696}
-  m_LocalPosition: {x: 0.74, y: 0.56, z: -12.93}
+  m_LocalPosition: {x: -3.36, y: 0.56, z: -12.93}
   m_LocalScale: {x: 1, y: 1, z: 0.19172}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23587,7 +23587,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353783104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.002, y: 0.144, z: -5.646}
+  m_LocalPosition: {x: 0.009, y: 0.34, z: -5.89}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23602,8 +23602,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353783104}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -23846,7 +23846,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369400315}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -23897,7 +23897,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369400315}
   m_LocalRotation: {x: -0.25351256, y: -0, z: -0, w: 0.9673321}
-  m_LocalPosition: {x: 0.059336923, y: 0.6647, z: -13.2605}
+  m_LocalPosition: {x: 5, y: 0.6647, z: -13.2605}
   m_LocalScale: {x: 1, y: 0.4493286, z: 1.2678441}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25092,7 +25092,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462585437}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -25143,7 +25143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462585437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.037330426, y: 0.049, z: -15.242}
+  m_LocalPosition: {x: 4.53, y: 0.049, z: -15.242}
   m_LocalScale: {x: 0.23044996, y: 0.16915, z: 0.2035382}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30910,7 +30910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 512efd9e23a0dcd48827fdac3da5d64c, type: 3}
       propertyPath: m_Name
-      value: Fernseher
+      value: Fernseher-GUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 512efd9e23a0dcd48827fdac3da5d64c, type: 3}
@@ -33203,6 +33203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawner: {fileID: 1546338993}
+  pinSpawner: {fileID: 1353783110}
 --- !u!1 &2008446666
 GameObject:
   m_ObjectHideFlags: 0
@@ -36492,7 +36493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6161718041745290211}
   m_LocalRotation: {x: 0.028379455, y: -0.02003999, z: -0.57647777, w: 0.816374}
-  m_LocalPosition: {x: 0.069, y: 0.323, z: 2.469}
+  m_LocalPosition: {x: 0.069, y: 0.323, z: -7.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []

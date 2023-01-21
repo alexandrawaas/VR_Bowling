@@ -10,9 +10,9 @@ public class PinTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == collisionObject.GetComponent<MeshCollider>())
+        if (other.GetComponent<MeshCollider>() != null)
         {
-            fallenPins++;
+            if (!hasFallen) fallenPins++;
             ScoreManager.instance.AddPoint();
             hasFallen = true;
             Debug.Log("Fallen Pins: " + fallenPins);

@@ -23,5 +23,6 @@ public class PinSpawner : MonoBehaviour
     public void Spawn()
     {
         GameObject newSpawnedObject = Instantiate(spawnItem, transform.position, Quaternion.identity);
+        newSpawnedObject.transform.parent = transform;
     }
 }
