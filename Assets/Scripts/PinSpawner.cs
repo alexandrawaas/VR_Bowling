@@ -12,7 +12,7 @@ public class PinSpawner : MonoBehaviour
     void Start()
     {
         Spawn();
-        Debug.Log("Pins Spawned");
+        Debug.Log("Pin Spawned");
     }
 
     // Update is called once per frame

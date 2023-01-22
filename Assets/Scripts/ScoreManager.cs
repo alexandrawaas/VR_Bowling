@@ -6,7 +6,7 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-	public static ScoreManager instance;
+	/*public static ScoreManager instance;
 	public PinSpawner pinSpawner;
 
 	private int round = 1;
@@ -58,5 +58,5 @@ public class ScoreManager : MonoBehaviour
 	{
 		roundTotal = 0;
 		round++;
-	}
+	}*/
 }

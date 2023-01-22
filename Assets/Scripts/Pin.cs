@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PinTrigger : MonoBehaviour
+public class Pin : MonoBehaviour
 {
-    public GameObject collisionObject;
     public static int fallenPins = 0;
     public bool hasFallen = false;
 
@@ -12,8 +11,11 @@ public class PinTrigger : MonoBehaviour
     {
         if (other.GetComponent<MeshCollider>() != null)
         {
-            if (!hasFallen) fallenPins++;
-            ScoreManager.instance.AddPoint();
+            if (!hasFallen)
+            {
+                fallenPins++;
+                GameUIController.instance.currPlayer.AddPoint();
+            }
             hasFallen = true;
             Debug.Log("Fallen Pins: " + fallenPins);
         }

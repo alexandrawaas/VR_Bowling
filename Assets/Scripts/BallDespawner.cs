@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class BallDespawner : MonoBehaviour
 {
-    public BallSpawner Spawner;
-	public PinSpawner pinSpawner;
-
+    public BallSpawner spawner;
+	public PinDespawner pinDespawner;
+	
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<BallIdentifier>() != null)
         {
             StartCoroutine(DestroyBall(other));
-            Spawner.Spawn();
+            spawner.Spawn();
         }
     }
 
     private IEnumerator DestroyBall(Collider other)
     {
-        Destroy(other.gameObject, 5f);
-		Destroy(pinSpawner.transform.GetChild(0).gameObject, 5f);
-        yield return new WaitForSeconds(5);
-        ScoreManager.instance.EndThrow();
+        Destroy(other.gameObject, 15f);
+        yield return new WaitForSeconds(15);
+		pinDespawner.DespawnFallen();
+        GameUIController.instance.currPlayer.EndThrow();
         Debug.Log("nextThrow");
+		pinDespawner.ResetFallen();
     }
 }
