@@ -12,6 +12,8 @@ public class GameUIController : MonoBehaviour
     public Player currPlayer { get; private set; }
     private int currPlayerIndex = 0;
     
+    Color currPlayerColor = new (0.12f, 0.43f, 0.62f, 0.7803922f);
+    
     public int round { get; private set; } = 1;
     
     private void Awake() 
@@ -28,6 +30,7 @@ public class GameUIController : MonoBehaviour
             AddPlayer();
         }
         currPlayer = players[currPlayerIndex];
+		currPlayer.SetActiveColor(currPlayerColor);
     }
 
     // Update is called once per frame
@@ -49,11 +52,12 @@ public class GameUIController : MonoBehaviour
         currPlayerIndex++;
         Debug.Log("Player" + (currPlayerIndex + 1));
         pinDespawner.DespawnAll();
-        pinDespawner.SpawnAll();
         pinDespawner.ResetFallen();
+        pinDespawner.SpawnAll();
         Pin.fallenPins = 0;
         if (currPlayerIndex > players.Count - 1) EndRound();
         currPlayer = players[currPlayerIndex];
+        currPlayer.SetActiveColor(currPlayerColor);
     }
     private void EndRound() 
     {

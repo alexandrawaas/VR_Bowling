@@ -14,8 +14,8 @@ public class PinDespawner : MonoBehaviour
 			if(pinSpawner.transform.childCount != 0) 
 			{
 				pin = pinSpawner.transform.GetChild(0).gameObject;	
-				Debug.Log("Despawner" + pin.GetComponent<Pin>().hasFallen);
-				if (pin.GetComponent<Pin>().hasFallen == true) Destroy(pinSpawner.transform.GetChild(0).gameObject, 5f);
+				//Debug.Log("Despawner" + pin.GetComponent<Pin>().hasFallen);
+				if (pin.GetComponent<Pin>().hasFallen) Destroy(pinSpawner.transform.GetChild(0).gameObject, 5f);
 			}
 		}
     }

@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     //Index of current throw in all throws
     private int currThrow = 0;
     private int currScoreField = 0;
+	private Color otherPlayersColor = new Color(0.35f, 0.62f, 0.79f, 0.7803922f);
     
     // Start is called before the first frame update
     void Start()
@@ -58,6 +59,8 @@ public class Player : MonoBehaviour
             currScoreField++;
             currThrow = 0;
             roundTotal = 0;
+			Debug.Log("Image:" + this.gameObject.GetComponent<Image>());
+            gameObject.GetComponent<Image>().color = otherPlayersColor;
             GameUIController.instance.EndTurn();
         }
 		
@@ -69,4 +72,9 @@ public class Player : MonoBehaviour
         throwScore ++;	
         throwScoreFields[currScoreField].text = throwScore.ToString();
     }
+
+	public void SetActiveColor(Color color)
+	{
+		gameObject.GetComponent<Image>().color = color;
+	}
 }
