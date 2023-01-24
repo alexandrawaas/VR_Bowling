@@ -47,7 +47,8 @@ public class GameController : MonoBehaviour
         isThrowEnded = true;
         yield return new WaitForSeconds(15);
         pinsManager.HideFallen();
-        players[currentPlayerIndex].SetScore(currentRound, currentThrow, pinsManager.fallenPins);
+        if (currentThrow == 1) scoreBefore = 0;
+        players[currentPlayerIndex].SetScore(currentRound, currentThrow, pinsManager.fallenPins, scoreBefore);
         if (pinsManager.fallenPins == 10 && currentThrow == 1 || currentThrow == 3)
         {
             Debug.Log("Strike!");
