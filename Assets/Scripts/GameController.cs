@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int playersNumber;
     [SerializeField] private TurnGui turnGuiPrefab;
     [SerializeField] private Ampel ampel;
-    
+
     private List<TurnGui> players = new ();
     private int currentPlayerIndex = 0;
     private int currentRound = 1;
@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     private readonly Color greenLightColor = new (0f, 1f, 0f, 1f);
     private readonly Color redLightColor = new (1f, 0f, 0f, 1f);
     private bool isThrowEnded = false;
+    private int scoreBefore = 0;
 
 
 
@@ -47,6 +48,16 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(15);
         pinsManager.HideFallen();
         players[currentPlayerIndex].SetScore(currentRound, currentThrow, pinsManager.fallenPins);
+        if (pinsManager.fallenPins == 10 && currentThrow == 1 || currentThrow == 3)
+        {
+            Debug.Log("Strike!");
+            currentThrow++;
+        }
+        if (pinsManager.fallenPins + scoreBefore == 10)
+        {
+            Debug.Log("Spare!");
+        }
+        scoreBefore = pinsManager.fallenPins;
         pinsManager.ResetBooleanFallen();
         currentThrow++;
         ampel.SetColor(greenLightColor);

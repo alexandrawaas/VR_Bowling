@@ -17,7 +17,7 @@ public class Pin : MonoBehaviour
         if(other.gameObject.GetComponent<AreaBindedImpulsedObjectSpawner>() == null)
         {
             if (!hasFallen) hasFallen = true;
-            Debug.Log("Pin" + gameObject.name + " has fallen because of " + other.gameObject.name);
+            //Debug.Log("Pin" + gameObject.name + " has fallen because of " + other.gameObject.name);
         }
     } 
 
