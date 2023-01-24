@@ -6029,8 +6029,9 @@ GameObject:
   - component: {fileID: 1378314765}
   - component: {fileID: 1378314764}
   - component: {fileID: 1378314763}
+  - component: {fileID: 1378314767}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Ampel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6115,6 +6116,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1378314767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378314762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97bc22586b1830043828959d66876e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1398961732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
@@ -8807,6 +8820,7 @@ MonoBehaviour:
   areaBindedImpulsedObjectSpawner: {fileID: 2005147169}
   playersNumber: 2
   turnGuiPrefab: {fileID: 4279005357105200101, guid: 4d252eee5d61e354c9b62318d57265d6, type: 3}
+  ampel: {fileID: 1378314767}
 --- !u!1001 &1970754079
 PrefabInstance:
   m_ObjectHideFlags: 0

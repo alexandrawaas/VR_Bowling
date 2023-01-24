@@ -14,11 +14,12 @@ public class Pin : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<Pin>() == null && other.GetComponent<SphereCollider>() == null)
+        if(other.gameObject.GetComponent<AreaBindedImpulsedObjectSpawner>() == null)
         {
             if (!hasFallen) hasFallen = true;
+            Debug.Log("Pin" + gameObject.name + " has fallen because of " + other.gameObject.name);
         }
-    }
+    } 
 
     public void Hide()
     {

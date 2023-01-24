@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private AreaBindedImpulsedObjectSpawner areaBindedImpulsedObjectSpawner;
     [SerializeField] private int playersNumber;
     [SerializeField] private TurnGui turnGuiPrefab;
+    [SerializeField] private Ampel ampel;
     
     private List<TurnGui> players = new ();
     private int currentPlayerIndex = 0;
@@ -16,6 +17,8 @@ public class GameController : MonoBehaviour
     private int currentThrow = 1;
     private readonly Color currentPlayerColor = new (0.31f, 0.65f, 0.86f, 0.7803922f);
     private readonly Color otherPlayersColor = new (0.61f, 0.68f, 0.72f, 0.7803922f);
+    private readonly Color greenLightColor = new (0f, 1f, 0f, 1f);
+    private readonly Color redLightColor = new (1f, 0f, 0f, 1f);
     private bool isThrowEnded = false;
 
 
@@ -39,12 +42,14 @@ public class GameController : MonoBehaviour
     private IEnumerator EndThrow()
     {
         Debug.Log("Throw ended");
+        ampel.SetColor(redLightColor);
         isThrowEnded = true;
         yield return new WaitForSeconds(15);
         pinsManager.HideFallen();
         players[currentPlayerIndex].SetScore(currentRound, currentThrow, pinsManager.fallenPins);
         pinsManager.ResetBooleanFallen();
         currentThrow++;
+        ampel.SetColor(greenLightColor);
         if (currentThrow > 2 && currentRound < 10 || currentThrow == 3 && currentRound == 10) EndTurn();
         //if (currentRound > 10 && currentThrow > 3) EndGame();
     }
