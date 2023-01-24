@@ -52,8 +52,8 @@ public class GameController : MonoBehaviour
         {
             Debug.Log("Strike!");
             currentThrow++;
-        }
-        if (pinsManager.fallenPins + scoreBefore == 10)
+        } 
+        else if (pinsManager.fallenPins + scoreBefore == 10)
         {
             Debug.Log("Spare!");
         }
