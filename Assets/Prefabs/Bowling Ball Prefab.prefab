@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5289612612329101273}
   - component: {fileID: 2100407803094300167}
   - component: {fileID: 3482143072811185376}
-  - component: {fileID: 2258762941123816882}
+  - component: {fileID: 911698510925596665}
   m_Layer: 0
   m_Name: Bowling Ball Prefab
   m_TagString: Untagged
@@ -251,7 +251,7 @@ MonoBehaviour:
   previewPoseSelection: 0
   blendingBehaviours: []
   scale: 1
---- !u!114 &2258762941123816882
+--- !u!114 &911698510925596665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,6 +260,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8242373135854093829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538de483c0f54f24ea6eac9b20572b90, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e296e67cd5d3b848be6b0e3c8229aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
