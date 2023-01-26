@@ -8,10 +8,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ampel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ampel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boundary.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2KjWEfmlQNMtZokdi0kduSCh2AF" />
   <component name="ProjectViewState">
@@ -82,7 +86,8 @@
       <updated>1674488367866</updated>
       <workItem from="1674488371644" duration="7787000" />
       <workItem from="1674497754161" duration="23009000" />
-      <workItem from="1674544945507" duration="14763000" />
+      <workItem from="1674544945507" duration="15404000" />
+      <workItem from="1674765840834" duration="3201000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -103,47 +101,4 @@ public class TurnGui : MonoBehaviour
         if (score + scoreBefore == 10) return "/";
         return score.ToString();
     }
-    
-    
-    /*public void EndThrow()
-    {
-        if(currThrow == 2 && GameUIController.instance.round == 10 && (roundTotal + throwScore) == 10)
-        {
-            roundTotal += throwScore;
-            roundTotalFields[GameUIController.instance.round-1].text = roundTotal.ToString();
-            currScoreField++;
-            currThrow++;
-            
-        }
-        else if (currThrow < 1)
-        {
-            Debug.Log("First Throw");
-            roundTotal += throwScore;
-            roundTotalFields[GameUIController.instance.round-1].text = roundTotal.ToString();
-            currScoreField++;
-            currThrow++;
-        } 
-        else
-        {
-            Debug.Log("Turn Over");
-            roundTotal += throwScore;
-            roundTotalFields[GameUIController.instance.round-1].text = roundTotal.ToString();
-            total += roundTotal;
-            totalField.text = total.ToString();
-            currScoreField++;
-            currThrow = 0;
-            roundTotal = 0;
-			Debug.Log("Image:" + this.gameObject.GetComponent<Image>());
-            gameObject.GetComponent<Image>().color = otherPlayersColor;
-            GameUIController.instance.EndTurn();
-        }
-		
-        throwScore = 0;
-    }
-    
-    public void AddPoint()
-    {
-        throwScore ++;	
-        throwScoreFields[currScoreField].text = throwScore.ToString();
-    }*/
 }

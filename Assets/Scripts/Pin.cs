@@ -1,15 +1,18 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Pin : MonoBehaviour
 {
     private Vector3 position;
     private Quaternion rotation;
+    private GameObject pin;
     public bool hasFallen { get; private set; } = false ;
 
     void Start()
     {
-        position = gameObject.transform.position;
-        rotation = gameObject.transform.rotation;
+        pin = gameObject;
+        position = pin.transform.position;
+        rotation = pin.transform.rotation;
     }
     
     private void OnTriggerEnter(Collider other)
@@ -23,16 +26,17 @@ public class Pin : MonoBehaviour
 
     public void Hide()
     {
-        gameObject.SetActive(false);
+        pin.SetActive(false);
     }
 
     public void Reset()
     {
-        gameObject.transform.position = position;
-        gameObject.transform.rotation = rotation;
-        gameObject.GetComponent<Rigidbody>().Sleep();
+        var pinRigidbody = pin.GetComponent<Rigidbody>();
+        pin.transform.position = position;
+        pin.transform.rotation = rotation;
+        pinRigidbody.Sleep();
         gameObject.SetActive(true);
-        gameObject.GetComponent<Rigidbody>().WakeUp();
+        pinRigidbody.WakeUp();
         hasFallen = false;
     }
 
