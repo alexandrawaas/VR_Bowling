@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 5289612612329101273}
   - component: {fileID: 2100407803094300167}
   - component: {fileID: 3482143072811185376}
-  - component: {fileID: 911698510925596665}
   m_Layer: 0
   m_Name: Bowling Ball Prefab
   m_TagString: Untagged
@@ -67,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2264661229660865361, guid: aa06bbfff6137594e9d330b52fbe6f07, type: 3}
+  - {fileID: 2100000, guid: cc09792e8d9a09c41b4395e5468c4763, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -251,15 +250,3 @@ MonoBehaviour:
   previewPoseSelection: 0
   blendingBehaviours: []
   scale: 1
---- !u!114 &911698510925596665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8242373135854093829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e296e67cd5d3b848be6b0e3c8229aa0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

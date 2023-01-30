@@ -8,8 +8,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ampel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boundary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ColoredLight.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -88,6 +88,8 @@
       <workItem from="1674497754161" duration="23009000" />
       <workItem from="1674544945507" duration="15404000" />
       <workItem from="1674765840834" duration="3201000" />
+      <workItem from="1674831498228" duration="3966000" />
+      <workItem from="1675008505087" duration="3063000" />
     </task>
     <servers />
   </component>

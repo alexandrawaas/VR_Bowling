@@ -9,16 +9,12 @@ public class GameController : MonoBehaviour
     [SerializeField] private AreaBindedImpulsedObjectSpawner areaBindedImpulsedObjectSpawner;
     [SerializeField] private int playersNumber;
     [SerializeField] private TurnGui turnGuiPrefab;
-    [SerializeField] private Ampel ampel;
+    [SerializeField] private ColoredLight ampel;
 
     private List<TurnGui> players = new ();
     private int currentPlayerIndex = 0;
     private int currentRound = 1;
     private int currentThrow = 1;
-    private readonly Color currentPlayerColor = new (0.31f, 0.65f, 0.86f, 0.7803922f);
-    private readonly Color otherPlayersColor = new (0.61f, 0.68f, 0.72f, 0.7803922f);
-    private readonly Color greenLightColor = new (0f, 1f, 0f, 1f);
-    private readonly Color redLightColor = new (1f, 0f, 0f, 1f);
     private bool isThrowEnded = false;
     private int scoreBefore = 0;
 
@@ -43,7 +39,7 @@ public class GameController : MonoBehaviour
     private IEnumerator EndThrow()
     {
         Debug.Log("Throw ended");
-        ampel.SetColor(redLightColor);
+        ampel.ChangeToRed();
         isThrowEnded = true;
         yield return new WaitForSeconds(15);
         pinsManager.HideFallen();
@@ -61,7 +57,7 @@ public class GameController : MonoBehaviour
         scoreBefore = pinsManager.fallenPins;
         pinsManager.ResetBooleanFallen();
         currentThrow++;
-        ampel.SetColor(greenLightColor);
+        ampel.ChangeToGreen();
         if (currentThrow > 2 && currentRound < 10 || currentThrow == 3 && currentRound == 10) EndTurn();
         //if (currentRound > 10 && currentThrow > 3) EndGame();
     }
@@ -75,7 +71,7 @@ public class GameController : MonoBehaviour
         {
             AddPlayer();
         }
-		players[currentPlayerIndex].SetColor(currentPlayerColor);
+        players[currentPlayerIndex].SetActiveColor();
     }
 
 
@@ -92,7 +88,7 @@ public class GameController : MonoBehaviour
         Debug.Log("Turn ended");
         pinsManager.HideFallen();
         pinsManager.ResetAll();
-        players[currentPlayerIndex].SetColor(otherPlayersColor);
+        players[currentPlayerIndex].SetPassiveColor();
         currentPlayerIndex++;
         currentThrow = 1;
         if (currentPlayerIndex > players.Count - 1)
@@ -102,7 +98,7 @@ public class GameController : MonoBehaviour
         else
         {
             Debug.Log("Player" + (currentPlayerIndex + 1) + " ist dran");
-            players[currentPlayerIndex].SetColor(currentPlayerColor);
+            players[currentPlayerIndex].SetActiveColor();
         }
     }
     private void EndRound() 
@@ -116,7 +112,7 @@ public class GameController : MonoBehaviour
         else
         {
             currentPlayerIndex = 0;
-            players[currentPlayerIndex].SetColor(currentPlayerColor);
+            players[currentPlayerIndex].SetActiveColor();
         }
     }
 

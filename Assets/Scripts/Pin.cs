@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public class Pin : MonoBehaviour
@@ -15,14 +15,14 @@ public class Pin : MonoBehaviour
         rotation = pin.transform.rotation;
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void FixedUpdate()
     {
-        if(other.gameObject.GetComponent<AreaBindedImpulsedObjectSpawner>() == null)
+        if (!hasFallen && (Math.Abs(pin.transform.rotation.eulerAngles.z) > 70 || Math.Abs(pin.transform.rotation.eulerAngles.x) > 70))
         {
-            if (!hasFallen) hasFallen = true;
-            //Debug.Log("Pin" + gameObject.name + " has fallen because of " + other.gameObject.name);
+                hasFallen = true;
+                Debug.Log(pin.name+" has fallen");
         }
-    } 
+    }
 
     public void Hide()
     {

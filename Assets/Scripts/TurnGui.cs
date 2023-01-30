@@ -9,6 +9,9 @@ public class TurnGui : MonoBehaviour
     [SerializeField] private TMP_Text[] throwScoreFields;
     [SerializeField] private TMP_Text[] roundTotalFields;
     [SerializeField] private TMP_Text totalField;
+
+    private readonly Color currentPlayerColor = new (0.31f, 0.65f, 0.86f, 0.7803922f);
+    private readonly Color otherPlayersColor = new (0.61f, 0.68f, 0.72f, 0.7803922f);
     
     //score=null is spare slash
     public void SetScore(int round, int throwNumber, int? fallenPins, int scoreBefore)
@@ -80,9 +83,14 @@ public class TurnGui : MonoBehaviour
         totalField.text = result.ToString();
     }
     
-    public void SetColor(Color color)
+    public void SetActiveColor()
     {
-        gameObject.GetComponent<Image>().color = color;
+        gameObject.GetComponent<Image>().color = currentPlayerColor;
+    }
+    
+    public void SetPassiveColor()
+    {
+        gameObject.GetComponent<Image>().color = otherPlayersColor;
     }
 
     private int ScoreFieldTextToIntParser(int i)
@@ -101,4 +109,5 @@ public class TurnGui : MonoBehaviour
         if (score + scoreBefore == 10) return "/";
         return score.ToString();
     }
+    
 }
