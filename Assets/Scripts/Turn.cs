@@ -15,6 +15,7 @@ public class Turn
     {
         if (turnIndex < 9)
         {
+            Debug.Log("Runde " + turnIndex+1);
             if (currentThrow < 2)
             {
                 throws[currentThrow] = score;
@@ -35,6 +36,7 @@ public class Turn
         }
         else //Last Turn of the Player
         {
+            Debug.Log("Last Round");
             if (currentThrow < 3)
             {
                 throws[currentThrow] = score;
@@ -43,7 +45,7 @@ public class Turn
                 {
                     Debug.Log("Strike!");
                 }
-                else if (currentThrow < 2 && score + throws[currentThrow-1] == 10)
+                else if (currentThrow > 0 && score + throws[currentThrow-1] == 10)
                 {
                     Debug.Log("Spare!");
                     isSpare = true;

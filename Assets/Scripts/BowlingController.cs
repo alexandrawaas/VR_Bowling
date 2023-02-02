@@ -5,6 +5,7 @@ public class BowlingController : MonoBehaviour
 {
 	[SerializeField] private PinsManager pinsManager;
     [SerializeField] private AreaBindedImpulsedObjectSpawner areaBindedImpulsedObjectSpawner;
+    [SerializeField] private LaneObjectDespawner objectsOnLaneDespawner;
     [SerializeField] private int playersNumber;
     [SerializeField] private ColoredLight ampel;
     [SerializeField] private PlayerGui playerGuiPrefab;
@@ -25,11 +26,11 @@ public class BowlingController : MonoBehaviour
 	    if(areaBindedImpulsedObjectSpawner.isSpawnedObjectInTrigger)
 	    {
 		    if (!isThrowEnded) StartCoroutine(EndThrow());
-		    StartCoroutine(ResetBalls());
+		    StartCoroutine(ResetBallsAfterThrow());
 	    }
     }
 
-    private IEnumerator ResetBalls()
+    private IEnumerator ResetBallsAfterThrow()
     {
 	    yield return new WaitForSeconds(5);
 	    areaBindedImpulsedObjectSpawner.ResetAllBallsInTrigger();
@@ -44,9 +45,12 @@ public class BowlingController : MonoBehaviour
 	    yield return new WaitForSeconds(8);
 	    
 	    pinsManager.HideFallen();
-	    gameState.SetScore(pinsManager.fallenPins);
-	    gui.SetScore(pinsManager.fallenPins);
+
+	    var score = pinsManager.fallenPins;
+	    gameState.SetScore(score);
+	    gui.SetScore(score);
 	    gameState.GetCurrentPlayersTurn().IncreaseThrowNumber();
+	    Debug.Log("ThrowNumber: "+gameState.GetCurrentPlayersTurn().currentThrow);
 	    
 	    //Handle Turn End after Strike
 	    if(gameState.GetCurrentPlayersTurn().isStrike) gameState.GetCurrentPlayersTurn().IncreaseThrowNumber();
@@ -54,10 +58,19 @@ public class BowlingController : MonoBehaviour
 	    pinsManager.ResetBooleanFallen();
 	    ampel.ChangeToGreen();
 	    Debug.Log("Reached Point, Strike is "+gameState.GetCurrentPlayersTurn().isStrike);
+	    Debug.Log("Total: "+gameState.GetCurrentPlayersTurn().total);
 	    if (gameState.GetCurrentPlayersTurn().currentThrow > 1 && gameState.currentRound < 10 ||
-	        gameState.GetCurrentPlayersTurn().currentThrow == 2 && gameState.currentRound == 10)
+	        gameState.GetCurrentPlayersTurn().currentThrow > 2 && gameState.currentRound == 10 ||
+	        gameState.GetCurrentPlayersTurn().currentThrow > 1 && gameState.currentRound == 10 && gameState.GetCurrentPlayersTurn().total < 10)
 	    {
 		    EndTurn();
+	    }
+
+	    if (gameState.currentRound == 10 &&
+	        (score == 10 || gameState.GetCurrentPlayersTurn().isSpare))
+	    {
+		    pinsManager.HideFallen();
+		    pinsManager.ResetAll();
 	    }
     }
 

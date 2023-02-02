@@ -23,12 +23,12 @@ public class AreaBindedImpulsedObjectSpawner : MonoBehaviour
     
     void Start()
     {
-        StartCoroutine(FillBalls());
+        StartCoroutine(FillBalls(spawnObjectCount));
     }
 
-    private IEnumerator FillBalls()
+    private IEnumerator FillBalls(int count)
     {
-        for(int i = 0; i < spawnObjectCount; i++)
+        for(int i = 0; i < count; i++)
         {
             GameObject newSpawnedObject = Instantiate(spawnObjectTemplate, spawnPositionMarkerObject.transform.position, Quaternion.identity);
             ImpulseObject(newSpawnedObject);
@@ -62,5 +62,16 @@ public class AreaBindedImpulsedObjectSpawner : MonoBehaviour
     {
         impulsedObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         impulsedObject.GetComponent<Rigidbody>().velocity = transform.forward * spawnImpulseSpeed;
+    }
+
+    public void SpawnBall()
+    {
+        StartCoroutine(FillBalls(1));
+    }
+    
+    public void ResetBall(GameObject ball)
+    {
+        ball.transform.position = spawnPositionMarkerObject.transform.position;
+        ImpulseObject(ball);
     }
 }
