@@ -4638,7 +4638,7 @@ GameObject:
   - component: {fileID: 6587023287850995685}
   - component: {fileID: 6587023287850995684}
   - component: {fileID: 6587023287850995687}
-  - component: {fileID: 4279005357105200101}
+  - component: {fileID: 666618756177277244}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4699,7 +4699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.61, g: 0.68, b: 0.72, a: 0.6666667}
+  m_Color: {r: 0.66734314, g: 0.6117647, b: 0.72156864, a: 0.6666667}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4742,7 +4742,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &4279005357105200101
+--- !u!114 &666618756177277244
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4751,7 +4751,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6587023287850995681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4326e07f80a36b64d94a3c60c9eb5fd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8040e414ea7e6db46951e981fd70d36d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   throwScoreFields:
@@ -4788,6 +4788,7 @@ MonoBehaviour:
   - {fileID: 6587023286817241887}
   - {fileID: 6587023287391636498}
   totalField: {fileID: 6587023287848798578}
+  playerName: {fileID: 6587023287814526489}
 --- !u!1 &6587023287930457811
 GameObject:
   m_ObjectHideFlags: 0

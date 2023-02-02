@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    /*
     [SerializeField] private PinsManager pinsManager;
     [SerializeField] private AreaBindedImpulsedObjectSpawner areaBindedImpulsedObjectSpawner;
     [SerializeField] private int playersNumber;
@@ -123,7 +124,7 @@ public class GameController : MonoBehaviour
 
     private String GetWinner()
     {
-        //TODO calculate Winner
         return "X"; 
     }
+    */
 }

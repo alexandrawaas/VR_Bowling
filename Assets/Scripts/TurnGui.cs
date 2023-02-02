@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 
 public class TurnGui : MonoBehaviour
-{
+{/*
     //Single Throws, Round Total and Player Total. Counter of first two is reset to 0 after throw / round.
     [SerializeField] private TMP_Text[] throwScoreFields;
     [SerializeField] private TMP_Text[] roundTotalFields;
@@ -109,5 +109,5 @@ public class TurnGui : MonoBehaviour
         if (score + scoreBefore == 10) return "/";
         return score.ToString();
     }
-    
+    */
 }
