@@ -47,12 +47,7 @@ public class GameState
     {
         return players[currentPlayer].GetCurrentTurn(currentRound-1);
     }
-    
-    public Player GetCurrentPlayerStats()
-    {
-        return players[currentPlayer];
-    }
-    
+
     public Player GetPlayer(int index)
     {
         try

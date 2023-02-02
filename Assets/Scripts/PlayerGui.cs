@@ -13,10 +13,12 @@ public class PlayerGui : MonoBehaviour
     private readonly Color currentPlayerColor = new (0.6f, 0.4f, 1f, 1f);
     private readonly Color otherPlayersColor = new (0.7f, 0.7f, 0.8f, 0.3f);
     private int throwNumber;
+    private int currentTurnIndex;
 
     public void SetScore(int turnIndex, Turn currentTurn, int? fallenPins)
     {
         throwNumber = currentTurn.currentThrow;
+        currentTurnIndex = turnIndex;
         int scoreBefore = currentTurn.GetScoreBefore();
         int score;
         try
@@ -56,15 +58,21 @@ public class PlayerGui : MonoBehaviour
     public void UpdateAllFields(GameState gameState, int index)
     {
         Player stats = gameState.GetPlayer(index);
-        UpdateRoundFields(stats);
+        UpdateRoundFieldsUntilCurrent(stats);
         UpdateTotalField(stats);
     }
     
-    private void UpdateRoundFields(Player playerStats)
+    private void UpdateRoundFieldsUntilCurrent(Player playerStats)
     {
-        for (var i = 0; i < roundTotalFields.Length; i++)
+        for (var i = 0; i <= currentTurnIndex; i++)
         {
-            roundTotalFields[i].text = playerStats.turns[i].total.ToString();
+            var result = 0;
+            for(int j = 0; j<=i; j++)
+            {
+                result += playerStats.turns[j].total;
+
+            }
+            roundTotalFields[i].text = result.ToString();
         }
     }
 
@@ -100,7 +108,8 @@ public class PlayerGui : MonoBehaviour
 
     private String IntToScoreFieldText(int score, int scoreBefore)
     {
-        if (score == 10) return "X";
+        if (score == 10 && throwNumber == 0) return "X";
+        if (score == 10 && currentTurnIndex == 9) return "X";
         if (score + scoreBefore == 10) return "/";
         if (score == 0) return "-";
         return score.ToString();

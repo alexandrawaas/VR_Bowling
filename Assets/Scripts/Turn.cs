@@ -11,29 +11,47 @@ public class Turn
     public bool isSpare { get; private set; } = false;
     public int total { get; private set; } = 0;
 
-    public bool SetScore(int score)
+    public void SetScore(int turnIndex, int score)
     {
-        if (currentThrow < 2)
+        if (turnIndex < 9)
         {
-            throws[currentThrow] = score;
-            
-            if (score == 10)
+            if (currentThrow < 2)
             {
-                isStrike = true;
-                Debug.Log("Strike! Strike in Turn is "+isStrike);
+                throws[currentThrow] = score;
+
+                if (score == 10)
+                {
+                    isStrike = true;
+                    Debug.Log("Strike! Strike in Turn is " + isStrike);
+                }
+                else if (currentThrow == 1 && score + throws[0] == 10)
+                {
+                    Debug.Log("Spare!");
+                    isSpare = true;
+                }
+
+                total += score;
             }
-            else if (currentThrow == 1 && score + throws[0] == 10)
-            {
-                Debug.Log("Spare!");
-                isSpare = true;
-            }
-            
-            total += score;
-            
-            return true;
         }
-        // TODO Letzte Runde und Strike handeln
-        return false;
+        else //Last Turn of the Player
+        {
+            if (currentThrow < 3)
+            {
+                throws[currentThrow] = score;
+
+                if (score == 10)
+                {
+                    Debug.Log("Strike!");
+                }
+                else if (currentThrow < 2 && score + throws[currentThrow-1] == 10)
+                {
+                    Debug.Log("Spare!");
+                    isSpare = true;
+                }
+
+                total += score;
+            }
+        }
     }
 
     public void IncreaseThrowNumber()

@@ -10,7 +10,7 @@ public class Player
     // Start is called before the first frame update
     public Player(string name)
     {
-        this.playerName = name;
+        playerName = name;
         turns = new Turn[10];
         for(int i = 0; i < 10; i++)
         {
@@ -20,7 +20,7 @@ public class Player
 
     public void SetScore(int turnIndex, int score)
     {
-        turns[turnIndex].SetScore(score);
+        turns[turnIndex].SetScore(turnIndex, score);
         
         // Handle Strike and Spare Bonus Points
         if (turnIndex > 0 && (turns[turnIndex - 1].isStrike || turns[turnIndex - 1].isSpare))
