@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameState
 {
-    public int currentRound { get; private set; } = 9;
+    public int currentRound { get; private set; } = 1;
     public int currentPlayer { get; private set; } = 0;
     private Player[] players;
 

@@ -6,8 +6,8 @@ public class BowlingController : MonoBehaviour
 	[SerializeField] private PinsManager pinsManager;
     [SerializeField] private AreaBindedImpulsedObjectSpawner areaBindedImpulsedObjectSpawner;
     [SerializeField] private LaneObjectDespawner objectsOnLaneDespawner;
-    [SerializeField] private int playersNumber;
     [SerializeField] private ColoredLight ampel;
+    [SerializeField] private PinSetter pinSetter;
     [SerializeField] private PlayerGui playerGuiPrefab;
     [SerializeField] private GameObject screen;
 
@@ -15,9 +15,9 @@ public class BowlingController : MonoBehaviour
     private ScreenGui gui;
     private bool isThrowEnded = false;
 
-	void Start()
-    {
-	    gameState = new GameState(playersNumber);
+	public void StartNewBowlingGame(int playersNumber)
+	{
+		gameState = new GameState(playersNumber);
 	    gui = new ScreenGui(playersNumber, gameState, playerGuiPrefab, screen);
     }
 
@@ -42,7 +42,9 @@ public class BowlingController : MonoBehaviour
 	    Debug.Log("Throw ended");
 	    isThrowEnded = true;
 	    ampel.ChangeToRed();
-	    yield return new WaitForSeconds(8);
+	    yield return new WaitForSeconds(0.5f);
+	    pinSetter.SinkDown();
+	    yield return new WaitForSeconds(6);
 	    
 	    pinsManager.HideFallen();
 
@@ -56,6 +58,7 @@ public class BowlingController : MonoBehaviour
 	    if(gameState.GetCurrentPlayersTurn().isStrike && gameState.currentRound < 10) gameState.GetCurrentPlayersTurn().IncreaseThrowNumber();
 	    
 	    pinsManager.ResetBooleanFallen();
+	    pinSetter.ResetPosition();
 	    ampel.ChangeToGreen();
 	    Debug.Log("Reached Point, Strike is "+gameState.GetCurrentPlayersTurn().isStrike);
 	    Debug.Log("Total: "+gameState.GetCurrentPlayersTurn().total);

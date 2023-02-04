@@ -30,7 +30,7 @@ public class Player
                 turns[turnIndex - 1].AddToTotal(score);
             }
 
-            if (turns[turnIndex - 1].isSpare && turns[turnIndex].currentThrow == 0)
+            if (turnIndex > 0 && turns[turnIndex - 1].isSpare && turns[turnIndex].currentThrow == 0)
             {
                 turns[turnIndex - 1].AddToTotal(score);
             }
