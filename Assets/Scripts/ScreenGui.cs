@@ -15,7 +15,8 @@ public class ScreenGui
         for(var i = 0; i < playerNumber; i++)
         {
             playerGuis[i] = UnityEngine.Object.Instantiate(playerGuiPrefab, new Vector3 (0, 0, 0), Quaternion.identity);
-            playerGuis[i].transform.SetParent(screen.transform, false); 
+            playerGuis[i].transform.SetParent(screen.transform, false);
+            playerGuis[i].SetName("Player "+(i+1));
         }
         playerGuis[0].SetActiveColor();
         UpdateGui();

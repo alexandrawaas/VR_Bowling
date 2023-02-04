@@ -53,7 +53,7 @@ public class BowlingController : MonoBehaviour
 	    Debug.Log("ThrowNumber: "+gameState.GetCurrentPlayersTurn().currentThrow);
 	    
 	    //Handle Turn End after Strike
-	    if(gameState.GetCurrentPlayersTurn().isStrike) gameState.GetCurrentPlayersTurn().IncreaseThrowNumber();
+	    if(gameState.GetCurrentPlayersTurn().isStrike && gameState.currentRound < 10) gameState.GetCurrentPlayersTurn().IncreaseThrowNumber();
 	    
 	    pinsManager.ResetBooleanFallen();
 	    ampel.ChangeToGreen();

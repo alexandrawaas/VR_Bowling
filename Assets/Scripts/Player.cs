@@ -23,14 +23,35 @@ public class Player
         turns[turnIndex].SetScore(turnIndex, score);
         
         // Handle Strike and Spare Bonus Points
-        if (turnIndex > 0 && (turns[turnIndex - 1].isStrike || turns[turnIndex - 1].isSpare))
+        if(turnIndex < 9)
         {
-            turns[turnIndex - 1].AddToTotal(score);
-        } 
-        // Handle special case where a Strike follows another Strike
-        if (turnIndex > 1 && turns[turnIndex - 2].isStrike && turns[turnIndex -1].isStrike)
+            if (turnIndex > 0 && turns[turnIndex - 1].isStrike)
+            {
+                turns[turnIndex - 1].AddToTotal(score);
+            }
+
+            if (turns[turnIndex - 1].isSpare && turns[turnIndex].currentThrow == 0)
+            {
+                turns[turnIndex - 1].AddToTotal(score);
+            }
+
+            // Handle special case where a Strike follows another Strike
+            if (turnIndex > 1 && turns[turnIndex - 2].isStrike && turns[turnIndex - 1].isStrike)
+            {
+                turns[turnIndex - 2].AddToTotal(score);
+            }
+        }
+        else
         {
-            turns[turnIndex - 2].AddToTotal(score);
+            if (turns[turnIndex - 1].isStrike && turns[turnIndex].currentThrow < 2)
+            {
+                turns[turnIndex - 1].AddToTotal(score);
+            }
+
+            if (turns[turnIndex - 1].isSpare && turns[turnIndex].currentThrow == 0)
+            {
+                turns[turnIndex - 1].AddToTotal(score);
+            }
         }
     }
 

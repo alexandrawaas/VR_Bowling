@@ -14,11 +14,13 @@ public class PlayerGui : MonoBehaviour
     private readonly Color otherPlayersColor = new (0.7f, 0.7f, 0.8f, 0.3f);
     private int throwNumber;
     private int currentTurnIndex;
+    private Turn currentTurnObject;
 
     public void SetScore(int turnIndex, Turn currentTurn, int? fallenPins)
     {
         throwNumber = currentTurn.currentThrow;
         currentTurnIndex = turnIndex;
+        currentTurnObject = currentTurn;
         int scoreBefore = currentTurn.GetScoreBefore();
         int score;
         try
@@ -38,19 +40,23 @@ public class PlayerGui : MonoBehaviour
 
         if (turnIndex == 10 && throwNumber == 3)
         {
+            Debug.Log("Hi");
             throwScoreFields[^1].text = IntToScoreFieldText(score, scoreBefore);
         }
         
         if (throwNumber == 0) 
         {
+            throwScoreFields[turnIndex*2].color = Color.white;
             throwScoreFields[turnIndex*2].text=IntToScoreFieldText(score, scoreBefore);
         }
         else if (throwNumber == 1)
         {
+            throwScoreFields[turnIndex*2+1].color = Color.white;
             throwScoreFields[turnIndex*2+1].text=IntToScoreFieldText(score, scoreBefore);
         }
         else if (throwNumber == 2)
         {
+            throwScoreFields[turnIndex*2+2].color = Color.white;
             throwScoreFields[turnIndex*2+2].text=IntToScoreFieldText(score, scoreBefore);
         }
     }
@@ -72,6 +78,7 @@ public class PlayerGui : MonoBehaviour
                 result += playerStats.turns[j].total;
 
             }
+            roundTotalFields[i].color = Color.white;
             roundTotalFields[i].text = result.ToString();
         }
     }
@@ -96,21 +103,13 @@ public class PlayerGui : MonoBehaviour
         playerName.text = str;
     }
     
-    /*private int ScoreFieldTextToIntParser(int i)
-    {
-        if (throwScoreFields[i].text == "X") return 10;
-        if (throwScoreFields[i].text == "/")
-        {
-            return 10 - Int32.Parse(throwScoreFields[i - 1].text);
-        }
-        return Int32.Parse(throwScoreFields[i].text);
-    }*/
-
     private String IntToScoreFieldText(int score, int scoreBefore)
-    {
-        if (score == 10 && throwNumber == 0) return "X";
-        if (score == 10 && currentTurnIndex == 9) return "X";
-        if (score + scoreBefore == 10) return "/";
+    {   
+        if (throwNumber == 0 && score == 10) return "X";
+        if (currentTurnIndex == 9 && score == 10) return "X";
+        if (throwNumber > 0 && (currentTurnObject.throws[throwNumber] + currentTurnObject.throws[throwNumber - 1] == 10) &&
+            !(currentTurnIndex == 9 && throwNumber > 1 && currentTurnObject.throws[throwNumber-2] + currentTurnObject.throws[throwNumber-1] == 10))
+            return "/";
         if (score == 0) return "-";
         return score.ToString();
     }
