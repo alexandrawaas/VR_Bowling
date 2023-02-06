@@ -9,12 +9,13 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private BowlingController bowlingController;
     [SerializeField] private Slider playerSlider;
     [SerializeField] private TMP_Text playerNumberLabel;
-    [SerializeField] private Toggle bumperToggle;
+    [SerializeField] public  Toggle bumperToggle { get; private set; }
     [SerializeField] private GameObject bumpers;
+    private int playerNumber = 1;
 
-    public void SetPlayersNumber()
+    public void UpdatePlayersNumber()
     {
-        playerNumberLabel.text = playerSlider.value.ToString();
+        playerNumberLabel.text = playerNumber.ToString();
     }
 
     public void ToggleBumpers()
@@ -22,8 +23,20 @@ public class MainMenu : MonoBehaviour
         bumpers.SetActive(bumperToggle.isOn);
     }
 
+    public void IncrementPlayerNumber()
+    {
+        if(playerNumber < 6) playerNumber++;
+        UpdatePlayersNumber();
+    }
+
+    public void DecrementPlayerNumber()
+    {
+        if (playerNumber > 1) playerNumber--;
+        UpdatePlayersNumber() ;
+    }
+
     public void StartGame()
     {
-        bowlingController.StartNewBowlingGame((int)playerSlider.value);
+        bowlingController.StartNewBowlingGame(playerNumber);
     }
 }

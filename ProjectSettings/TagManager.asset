@@ -6,6 +6,9 @@ TagManager:
   tags:
   - BowlingBall
   - StartGameButton
+  - PlusButton
+  - MinusButton
+  - BumpersToggle
   layers:
   - Default
   - TransparentFX
@@ -15,8 +18,8 @@ TagManager:
   - UI
   - PlayerBoundaries
   - PostProcessing
-  - 
-  - 
+  - InvisibleForTeleporter
+  - Teleporter
   - 
   - 
   - 
