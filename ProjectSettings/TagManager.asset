@@ -9,6 +9,9 @@ TagManager:
   - PlusButton
   - MinusButton
   - BumpersToggle
+  - OpenConfirmButton
+  - ConfirmYesButton
+  - ConfirmNoButton
   layers:
   - Default
   - TransparentFX
