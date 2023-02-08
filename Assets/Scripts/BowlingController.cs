@@ -19,6 +19,7 @@ public class BowlingController : MonoBehaviour
 	{
 		gameState = new GameState(playersNumber);
 	    gui = new ScreenGui(playersNumber, gameState, playerGuiPrefab, screen);
+	    areaBindedImpulsedObjectSpawner.SpawnBowlingBalls();
     }
 
     private void Update()

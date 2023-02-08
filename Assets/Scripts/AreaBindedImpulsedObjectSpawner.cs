@@ -21,7 +21,7 @@ public class AreaBindedImpulsedObjectSpawner : MonoBehaviour
     }
     
     
-    void Start()
+    public void SpawnBowlingBalls()
     {
         StartCoroutine(FillBalls(spawnObjectCount));
     }

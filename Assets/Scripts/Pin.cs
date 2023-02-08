@@ -7,12 +7,17 @@ public class Pin : MonoBehaviour
     private Quaternion rotation;
     private GameObject pin;
     public bool hasFallen { get; private set; } = false ;
+    private AudioSource audioSource;
 
     void Start()
     {
         pin = gameObject;
         position = pin.transform.position;
         rotation = pin.transform.rotation;
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.spatialBlend = 0.9f;
+        audioSource.clip = Resources.Load<AudioClip>("PinFall");
     }
     
     private void FixedUpdate()
@@ -21,6 +26,7 @@ public class Pin : MonoBehaviour
         {
                 hasFallen = true;
                 Debug.Log(pin.name+" has fallen");
+                audioSource.Play();
         }
     }
 

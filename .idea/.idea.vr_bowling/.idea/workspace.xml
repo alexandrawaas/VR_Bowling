@@ -11,6 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3bd6d0d58da54f5f961bdfc524aed2c7fe00/71/1e878ad0/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Boundary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ColoredLight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameState.cs" root0="FORCE_HIGHLIGHTING" />
@@ -104,6 +105,7 @@
       <workItem from="1675353801211" duration="13242000" />
       <workItem from="1675521098950" duration="13423000" />
       <workItem from="1675617714106" duration="1116000" />
+      <workItem from="1675873062869" duration="9882000" />
     </task>
     <servers />
   </component>
