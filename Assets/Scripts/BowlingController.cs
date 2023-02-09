@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class BowlingController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class BowlingController : MonoBehaviour
     [SerializeField] private PinSetter pinSetter;
     [SerializeField] private PlayerGui playerGuiPrefab;
     [SerializeField] private GameObject screen;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private VideoPlayer videoPlayer;
 
     private GameState gameState;
     private ScreenGui gui;
@@ -33,7 +36,7 @@ public class BowlingController : MonoBehaviour
 
     private IEnumerator ResetBallsAfterThrow()
     {
-	    yield return new WaitForSeconds(5);
+	    yield return new WaitForSeconds(2);
 	    areaBindedImpulsedObjectSpawner.ResetAllBallsInTrigger();
 	    isThrowEnded = false;
     }
@@ -45,13 +48,26 @@ public class BowlingController : MonoBehaviour
 	    ampel.ChangeToRed();
 	    yield return new WaitForSeconds(0.5f);
 	    pinSetter.SinkDown();
-	    yield return new WaitForSeconds(6);
+	    yield return new WaitForSeconds(2);
 	    
 	    pinsManager.HideFallen();
 
 	    var score = pinsManager.fallenPins;
 	    gameState.SetScore(score);
 	    gui.SetScore(score);
+	    if (gameState.GetCurrentPlayersTurn().isStrike || gameState.GetCurrentPlayersTurn().isSpare)
+	    {
+		    audioSource.Play();
+	    }
+	    if (gameState.GetCurrentPlayersTurn().isStrike)
+	    {
+		    videoPlayer.gameObject.SetActive(true);
+		    videoPlayer.Play();
+		    yield return new WaitForSeconds(12);
+		    videoPlayer.gameObject.SetActive(false);
+	    }
+
+	    yield return new WaitForSeconds(3);
 	    gameState.GetCurrentPlayersTurn().IncreaseThrowNumber();
 	    Debug.Log("ThrowNumber: "+gameState.GetCurrentPlayersTurn().currentThrow);
 	    
@@ -61,7 +77,6 @@ public class BowlingController : MonoBehaviour
 	    pinsManager.ResetBooleanFallen();
 	    pinSetter.ResetPosition();
 	    ampel.ChangeToGreen();
-	    Debug.Log("Reached Point, Strike is "+gameState.GetCurrentPlayersTurn().isStrike);
 	    Debug.Log("Total: "+gameState.GetCurrentPlayersTurn().total);
 	    if (gameState.GetCurrentPlayersTurn().currentThrow > 1 && gameState.currentRound < 10 ||
 	        gameState.GetCurrentPlayersTurn().currentThrow > 2 && gameState.currentRound == 10 ||
