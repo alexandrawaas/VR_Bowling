@@ -2117,6 +2117,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6e170678a9510c143893732e1c57622b, type: 2}
+    - target: {fileID: 5862742611794061045, guid: cf506acfefd1a3f429e1db487aece94d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf506acfefd1a3f429e1db487aece94d, type: 3}
 --- !u!4 &107845440 stripped
@@ -3908,6 +3912,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6e170678a9510c143893732e1c57622b, type: 2}
+    - target: {fileID: 5862742611794061045, guid: cf506acfefd1a3f429e1db487aece94d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf506acfefd1a3f429e1db487aece94d, type: 3}
 --- !u!1001 &190643453
@@ -10795,6 +10803,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6e170678a9510c143893732e1c57622b, type: 2}
+    - target: {fileID: 5862742611794061045, guid: cf506acfefd1a3f429e1db487aece94d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf506acfefd1a3f429e1db487aece94d, type: 3}
 --- !u!1 &529001844
@@ -17669,7 +17681,7 @@ GameObject:
   - component: {fileID: 963994024}
   - component: {fileID: 963994023}
   m_Layer: 0
-  m_Name: Plane (5)
+  m_Name: Weg 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20694,7 +20706,7 @@ GameObject:
   - component: {fileID: 1122266986}
   - component: {fileID: 1122266985}
   m_Layer: 0
-  m_Name: Plane (4)
+  m_Name: Weg 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20772,8 +20784,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122266984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -0.1, z: 9.22}
-  m_LocalScale: {x: 0.16846627, y: 0.30504, z: 0.6657085}
+  m_LocalPosition: {x: 0.062, y: -0.08, z: 9.16}
+  m_LocalScale: {x: 0.16846627, y: 0.30504, z: 0.7069341}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -21356,7 +21368,7 @@ GameObject:
   - component: {fileID: 1162507867}
   - component: {fileID: 1162507866}
   m_Layer: 0
-  m_Name: Plane (2)
+  m_Name: Weg 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21434,7 +21446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162507865}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.429, y: -0.09, z: 21.15}
+  m_LocalPosition: {x: 4.429, y: -0.08, z: 21.15}
   m_LocalScale: {x: 1.3935065, y: 0.30504, z: 0.18684107}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27160,7 +27172,7 @@ GameObject:
   - component: {fileID: 1484727251}
   - component: {fileID: 1484727250}
   m_Layer: 0
-  m_Name: Plane (3)
+  m_Name: Weg 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27238,8 +27250,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484727249}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.3, y: -0.08, z: 13.38}
-  m_LocalScale: {x: 0.16846627, y: 0.30504, z: 0.62702125}
+  m_LocalPosition: {x: 2.273, y: -0.08, z: 13.418}
+  m_LocalScale: {x: 0.16846627, y: 0.30504, z: 0.6116541}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -33535,7 +33547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804545039}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.42, y: -0.099990845, z: 27.9}
+  m_LocalPosition: {x: 5.42, y: -0.086, z: 27.9}
   m_LocalScale: {x: 0.9665925, y: 0.17799, z: 0.47531432}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34249,6 +34261,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6e170678a9510c143893732e1c57622b, type: 2}
+    - target: {fileID: 5862742611794061045, guid: cf506acfefd1a3f429e1db487aece94d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf506acfefd1a3f429e1db487aece94d, type: 3}
 --- !u!1001 &1828612292
