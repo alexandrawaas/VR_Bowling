@@ -39,10 +39,13 @@ public class Turn
             Debug.Log("Last Round");
             if (currentThrow < 3)
             {
+                isSpare = false;
+                isStrike = false;
                 throws[currentThrow] = score;
 
                 if (score == 10)
                 {
+                    isStrike = true;
                     Debug.Log("Strike!");
                 }
                 else if (currentThrow > 0 && score + throws[currentThrow-1] == 10)

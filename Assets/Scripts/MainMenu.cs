@@ -14,7 +14,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private TMP_Text playerNumberLabel;
     [SerializeField] public  Toggle bumperToggle { get; private set; }
     [SerializeField] private GameObject bumpers;
-    private bool gameIsRunning = false;
     private int playerNumber = 1;
 
     public void Start()
@@ -47,7 +46,6 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         bowlingController.StartNewBowlingGame(playerNumber);
-        gameIsRunning = true;
         changeGui();
     }
 

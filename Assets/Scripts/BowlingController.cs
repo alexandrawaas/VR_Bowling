@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Video;
 
 public class BowlingController : MonoBehaviour
@@ -12,17 +15,27 @@ public class BowlingController : MonoBehaviour
     [SerializeField] private PlayerGui playerGuiPrefab;
     [SerializeField] private GameObject screen;
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private AudioSource audioSourceWon;
+    [SerializeField] private VideoPlayer videoPlayerStrike;
+    [SerializeField] private VideoPlayer videoPlayerSpare;
+    [SerializeField] private VideoPlayer videoPlayerWon;
+    [SerializeField] private GameObject winnerScreen;
 
     private GameState gameState;
     private ScreenGui gui;
     private bool isThrowEnded = false;
 
-	public void StartNewBowlingGame(int playersNumber)
+    public void Awake()
+    {
+	    pinSetter.SinkDown();
+    }
+
+    public void StartNewBowlingGame(int playersNumber)
 	{
 		gameState = new GameState(playersNumber);
 	    gui = new ScreenGui(playersNumber, gameState, playerGuiPrefab, screen);
 	    areaBindedImpulsedObjectSpawner.SpawnBowlingBalls();
+	    pinSetter.ResetPosition();
     }
 
     private void Update()
@@ -48,23 +61,28 @@ public class BowlingController : MonoBehaviour
 	    ampel.ChangeToRed();
 	    yield return new WaitForSeconds(0.5f);
 	    pinSetter.SinkDown();
-	    yield return new WaitForSeconds(2);
+	    yield return new WaitForSeconds(4);
 	    
 	    pinsManager.HideFallen();
 
 	    var score = pinsManager.fallenPins;
 	    gameState.SetScore(score);
 	    gui.SetScore(score);
-	    if (gameState.GetCurrentPlayersTurn().isStrike || gameState.GetCurrentPlayersTurn().isSpare)
+	    if (gameState.GetCurrentPlayersTurn().isSpare)
 	    {
 		    audioSource.Play();
+		    videoPlayerSpare.gameObject.SetActive(true);
+		    videoPlayerSpare.Play();
+		    yield return new WaitForSeconds(8);
+		    videoPlayerSpare.gameObject.SetActive(false);
 	    }
 	    if (gameState.GetCurrentPlayersTurn().isStrike)
 	    {
-		    videoPlayer.gameObject.SetActive(true);
-		    videoPlayer.Play();
-		    yield return new WaitForSeconds(12);
-		    videoPlayer.gameObject.SetActive(false);
+		    audioSource.Play();
+		    videoPlayerStrike.gameObject.SetActive(true);
+		    videoPlayerStrike.Play();
+		    yield return new WaitForSeconds(8);
+		    videoPlayerStrike.gameObject.SetActive(false);
 	    }
 
 	    yield return new WaitForSeconds(3);
@@ -112,7 +130,13 @@ public class BowlingController : MonoBehaviour
     
     private void EndGame()
     {
+	    pinSetter.SinkDown();
 	    Debug.Log(gameState.GetWinner() + " hat gewonnen.");
+	    videoPlayerWon.gameObject.SetActive(true);
+	    audioSourceWon.Play();
+	    videoPlayerWon.Play();
+	    winnerScreen.GetComponentInChildren<TMP_Text>().SetText(gameState.GetWinner() + " hat gewonnen!");
+	    winnerScreen.SetActive(true);
     }
 
 

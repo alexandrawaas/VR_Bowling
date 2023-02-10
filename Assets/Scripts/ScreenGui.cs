@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ScreenGui
@@ -12,25 +13,27 @@ public class ScreenGui
     {
         this.gameState = gameState;
         playerGuis = new PlayerGui[playerNumber];
-        for(var i = 0; i < playerNumber; i++)
+        for (var i = 0; i < playerNumber; i++)
         {
-            playerGuis[i] = UnityEngine.Object.Instantiate(playerGuiPrefab, new Vector3 (0, 0, 0), Quaternion.identity);
+            playerGuis[i] = UnityEngine.Object.Instantiate(playerGuiPrefab, new Vector3(0, 0, 0), Quaternion.identity);
             playerGuis[i].transform.SetParent(screen.transform, false);
-            playerGuis[i].SetName("Player "+(i+1));
+            playerGuis[i].SetName("Player " + (i + 1));
         }
+
         playerGuis[0].SetActiveColor();
         UpdateGui();
     }
 
     public void SetScore(int score)
     {
-        playerGuis[gameState.currentPlayer].SetScore(gameState.currentRound-1, gameState.GetCurrentPlayersTurn(), score);
+        playerGuis[gameState.currentPlayer]
+            .SetScore(gameState.currentRound - 1, gameState.GetCurrentPlayersTurn(), score);
         UpdateGui();
     }
 
     public void UpdateGui()
     {
-        for(int i=0; i<playerGuis.Length; i++)
+        for (int i = 0; i < playerGuis.Length; i++)
         {
             playerGuis[i].UpdateAllFields(gameState, i);
         }
@@ -39,6 +42,7 @@ public class ScreenGui
     public void ChangeToNextPlayer(int index)
     {
         playerGuis[index].SetPassiveColor();
-        playerGuis[index+1>=playerGuis.Length? 0 : (index+1)].SetActiveColor();
+        playerGuis[index + 1 >= playerGuis.Length ? 0 : (index + 1)].SetActiveColor();
     }
 }
+    
