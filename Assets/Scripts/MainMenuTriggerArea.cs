@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+
 using UnityEngine;
-using UnityEngine.UI;
+
 using Valve.VR.Extras;
 
 public class MainMenuTriggerArea : MonoBehaviour
