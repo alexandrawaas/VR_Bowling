@@ -11,7 +11,6 @@ public class PinSetter : MonoBehaviour
     private void Start()
     {
         standardPosition = gameObject.transform.position;
-        gameObject.GetComponent<Rigidbody>().useGravity = false;
     }
 
     public void SinkDown()

@@ -10,15 +10,18 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private BowlingController bowlingController;
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private GameObject restartPanel;
+    [SerializeField] private GameObject bumperToggle;
     [SerializeField] private GameObject confirmRestartPanel;
+    [SerializeField] private GameObject confirmQuitPanel;
     [SerializeField] private TMP_Text playerNumberLabel;
-    [SerializeField] public  Toggle bumperToggle { get; private set; }
     [SerializeField] private GameObject bumpers;
     private int playerNumber = 1;
 
     public void Start()
     {
         bumpers.SetActive(false);
+        bowlingController.ClosePinSetter();
+        Debug.Log("Bumpers are inactive");
     }
 
     public void UpdatePlayersNumber()
@@ -28,7 +31,9 @@ public class MainMenu : MonoBehaviour
 
     public void ToggleBumpers()
     {
-        bumpers.SetActive(bumperToggle.isOn);
+        Debug.Log("Bumpers are "+bumperToggle.GetComponent<Toggle>().isOn);
+        bumpers.SetActive(bumperToggle.GetComponent<Toggle>().isOn);
+        Debug.Log("Bumpers are "+bumperToggle.GetComponent<Toggle>().isOn);
     }
 
     public void IncrementPlayerNumber()
@@ -64,6 +69,23 @@ public class MainMenu : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    
+    public void ConfirmQuit()
+    {
+        restartPanel.SetActive(false);
+        confirmQuitPanel.SetActive(true);
+    }
+
+    public void AbortQuit()
+    {
+        confirmQuitPanel.SetActive(false);
+        restartPanel.SetActive(true);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     public void changeGui()

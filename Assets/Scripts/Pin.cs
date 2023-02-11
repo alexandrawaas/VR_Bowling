@@ -16,7 +16,7 @@ public class Pin : MonoBehaviour
         rotation = pin.transform.rotation;
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
-        audioSource.spatialBlend = 0.9f;
+        audioSource.spatialBlend = 0.7f;
         audioSource.clip = Resources.Load<AudioClip>("PinFall");
     }
     

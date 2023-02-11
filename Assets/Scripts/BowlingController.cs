@@ -25,9 +25,10 @@ public class BowlingController : MonoBehaviour
     private ScreenGui gui;
     private bool isThrowEnded = false;
 
-    public void Awake()
+    public void ClosePinSetter()
     {
 	    pinSetter.SinkDown();
+	    Debug.Log("pinSetter should be down");
     }
 
     public void StartNewBowlingGame(int playersNumber)
@@ -36,6 +37,7 @@ public class BowlingController : MonoBehaviour
 	    gui = new ScreenGui(playersNumber, gameState, playerGuiPrefab, screen);
 	    areaBindedImpulsedObjectSpawner.SpawnBowlingBalls();
 	    pinSetter.ResetPosition();
+	    ampel.ChangeToGreen();
     }
 
     private void Update()
@@ -131,7 +133,7 @@ public class BowlingController : MonoBehaviour
     private void EndGame()
     {
 	    pinSetter.SinkDown();
-	    Debug.Log(gameState.GetWinner() + " hat gewonnen.");
+	    Debug.Log(gameState.GetWinner() + " won the game");
 	    videoPlayerWon.gameObject.SetActive(true);
 	    audioSourceWon.Play();
 	    videoPlayerWon.Play();

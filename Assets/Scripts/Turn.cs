@@ -20,7 +20,7 @@ public class Turn
             {
                 throws[currentThrow] = score;
 
-                if (score == 10)
+                if (score == 10 && currentThrow < 1)
                 {
                     isStrike = true;
                     Debug.Log("Strike! Strike in Turn is " + isStrike);
@@ -42,16 +42,16 @@ public class Turn
                 isSpare = false;
                 isStrike = false;
                 throws[currentThrow] = score;
-
-                if (score == 10)
-                {
-                    isStrike = true;
-                    Debug.Log("Strike!");
-                }
-                else if (currentThrow > 0 && score + throws[currentThrow-1] == 10)
+                
+                if (currentThrow > 0 && score + throws[currentThrow-1] == 10)
                 {
                     Debug.Log("Spare!");
                     isSpare = true;
+                }
+                else if (score == 10)
+                {
+                    isStrike = true;
+                    Debug.Log("Strike!");
                 }
 
                 total += score;

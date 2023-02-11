@@ -13,6 +13,9 @@ TagManager:
   - ConfirmYesButton
   - ConfirmNoButton
   - Ground
+  - OpenConfirmQuitButton
+  - ConfirmQuitYesButton
+  - ConfirmQuitNoButton
   layers:
   - Default
   - TransparentFX
