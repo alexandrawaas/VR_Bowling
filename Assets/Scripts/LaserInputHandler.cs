@@ -76,7 +76,6 @@ public class LaserInputHandler : MonoBehaviour
             e.target.gameObject.CompareTag("ConfirmQuitYesButton"))
         {
             e.target.gameObject.GetComponent<Image>().color = hover;
-
         }
     }
 
@@ -87,7 +86,10 @@ public class LaserInputHandler : MonoBehaviour
             e.target.gameObject.CompareTag("PlusButton") ||
             e.target.gameObject.CompareTag("OpenConfirmButton") ||
             e.target.gameObject.CompareTag("ConfirmNoButton") ||
-            e.target.gameObject.CompareTag("ConfirmYesButton"))
+            e.target.gameObject.CompareTag("ConfirmYesButton") ||
+            e.target.gameObject.CompareTag("OpenConfirmQuitButton") ||
+            e.target.gameObject.CompareTag("ConfirmQuitNoButton") ||
+            e.target.gameObject.CompareTag("ConfirmQuitYesButton"))
         {
             e.target.gameObject.GetComponent<Image>().color = up;
         }
