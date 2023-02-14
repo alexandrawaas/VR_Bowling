@@ -1,8 +1,6 @@
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Video;
 
 public class BowlingController : MonoBehaviour
@@ -20,6 +18,7 @@ public class BowlingController : MonoBehaviour
     [SerializeField] private VideoPlayer videoPlayerSpare;
     [SerializeField] private VideoPlayer videoPlayerWon;
     [SerializeField] private GameObject winnerScreen;
+    [SerializeField] private PersonAnimator personAnimator;
 
     private GameState gameState;
     private ScreenGui gui;
@@ -28,7 +27,6 @@ public class BowlingController : MonoBehaviour
     public void ClosePinSetter()
     {
 	    pinSetter.SinkDown();
-	    Debug.Log("pinSetter should be down");
     }
 
     public void StartNewBowlingGame(int playersNumber)
@@ -72,17 +70,24 @@ public class BowlingController : MonoBehaviour
 	    gui.SetScore(score);
 	    if (gameState.GetCurrentPlayersTurn().isSpare)
 	    {
-		    audioSource.Play();
 		    videoPlayerSpare.gameObject.SetActive(true);
 		    videoPlayerSpare.Play();
+		    personAnimator.MakePeopleCheer();
+		    audioSource.Play();
+		    personAnimator.StopPeopleCheer();
+
 		    yield return new WaitForSeconds(8);
 		    videoPlayerSpare.gameObject.SetActive(false);
 	    }
 	    if (gameState.GetCurrentPlayersTurn().isStrike)
 	    {
-		    audioSource.Play();
+		    
 		    videoPlayerStrike.gameObject.SetActive(true);
 		    videoPlayerStrike.Play();
+		    personAnimator.MakePeopleCheer();
+		    audioSource.Play();
+		    personAnimator.StopPeopleCheer();
+
 		    yield return new WaitForSeconds(8);
 		    videoPlayerStrike.gameObject.SetActive(false);
 	    }
@@ -133,6 +138,7 @@ public class BowlingController : MonoBehaviour
     private void EndGame()
     {
 	    pinSetter.SinkDown();
+	    ampel.ChangeToRed();
 	    Debug.Log(gameState.GetWinner() + " won the game");
 	    videoPlayerWon.gameObject.SetActive(true);
 	    audioSourceWon.Play();
