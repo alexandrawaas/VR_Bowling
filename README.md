@@ -8,7 +8,7 @@ QUELLEN
 
 TEXTUREN:
 - https://architextures.org/textures/
-- freepik.com
+- Alle Bilder: freepik.com
 - <a href="https://de.freepik.com/vektoren-kostenlos/isometrische-bunte-horizontale-bowling-banner_10155227.htm#page=6&query=bowling&position=33&from_view=search&track=sph">Bild von macrovector</a> auf Freepik
 - <a href="https://de.freepik.com/vektoren-kostenlos/cocktail-menue-konzept_9158841.htm#page=3&query=cocktail&position=28&from_view=author">Bild von pikisuperstar</a> auf Freepik
 - Bild von <a href="https://de.freepik.com/vektoren-kostenlos/handgezeichnetes-tafelmenue-fuer-restaurant_17757931.htm#page=3&query=menu&position=10&from_view=search&track=sph">Freepik</a>
@@ -69,12 +69,11 @@ SOUNDS:
 
 
 MUSIK:
-- https://mixkit.co/free-stock-music/tag/edm/
-
- 	Solitude by Alejandro Magaña (A. M.) 	
-	Karma by Michael Ramir C.
- 	I Can Hear Your Heartbeat by Michael Ramir C. 
- 	Super Strong by Michael Ramir C. 
+- https://mixkit.co/free-stock-music/tag/edm/:
+Solitude by Alejandro Magaña (A. M.) 	
+Karma by Michael Ramir C.
+I Can Hear Your Heartbeat by Michael Ramir C. 
+Super Strong by Michael Ramir C. 
 	
 
 VIDEOS:
