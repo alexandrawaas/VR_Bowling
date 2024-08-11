@@ -84,12 +84,11 @@ SOUNDS:
 
 
 MUSIC:
-- https://mixkit.co/free-stock-music/tag/edm/
-
- 	Solitude by Alejandro Magaña (A. M.) 	
-	Karma by Michael Ramir C.
- 	I Can Hear Your Heartbeat by Michael Ramir C. 
- 	Super Strong by Michael Ramir C. 
+- https://mixkit.co/free-stock-music/tag/edm/ <br>
+Solitude by Alejandro Magaña (A. M.) 	<br>
+Karma by Michael Ramir C. <br>
+I Can Hear Your Heartbeat by Michael Ramir C. <br>
+Super Strong by Michael Ramir C. 
 	
 
 VIDEOS:
