@@ -1,6 +1,6 @@
 ## Description
 
-I created this simple VR Bowling game in my university module "VR and AR", aiming to create a VR equivalent of a bowling hall to make the game more immersive and virtualize the whole experience of bowling. The game was developed using Unity and Steam VR. It was presented as part of the Hof University showcase on the first LFG-Con in 2024.
+I created this simple VR Bowling game in my university module "VR and AR", aiming to create a VR equivalent of a bowling hall to make the game more immersive and virtualize the whole experience of bowling. The game was developed using Unity and Steam VR and tested on Meta Quest 2. It was presented as part of the Hof University showcase on the first LFG-Con in 2024.
 
 ## Preview
 
